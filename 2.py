@@ -1,27 +1,31 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 # В списке, состоящем из целых элементов, вычислить:
 # 1. произведение элементов списка с четными номерами;
 # 2. сумму элементов списка, расположенных между первым и последним нулевыми элементами.
 # Преобразовать список таким образом, чтобы сначала располагались все положительные
 # элементы, а потом - все отрицательные (элементы, равные 0, считать положительными).
 
-numbers = [8, -4, 31, 0, 5, 22, 1, 0, -3]
-allMulti = 1
-rep = 0
-allSum = 0
+if __name__ == '__main__':
 
-for i in range(len(numbers)):
-    if i % 2 == 0:
-        allMulti = allMulti * numbers[i]
+    numbers = [8, 0, 31, 0, 5, 22, 1, 0, -3]
+    all_multi = 1
+    id2 = -1
 
-    if numbers[i] == 0:
-        rep += 1
+    for i in range(len(numbers)):
+        if i % 2 == 0:
+            all_multi = all_multi * numbers[i]
 
-    if rep == 1:
-        allSum += numbers[i]
+        if numbers[i] == 0 and id2 == -1:
+            id1 = i
 
-print("Произведение: ", allMulti)
-print("Сумма между '0': ", allSum)
+        if numbers[i] == 0:
+            id2 = i
 
-numbers.sort()
-numbers.reverse()
-print(numbers)
+    print("Произведение: ", all_multi)
+    print("Сумма между '0': ", sum(numbers[id1:id2]))
+
+    numbers.sort()
+    numbers.reverse()
+    print(numbers)

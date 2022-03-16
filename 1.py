@@ -1,16 +1,22 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 # Ввести список А из 10 элементов, найти наименьший элемент и переставить его с
 # последним элементом. Преобразованный массив вывести.
 
-numbers = [0]*10
-minHere = 10000
+if __name__ == '__main__':
 
-for i in range(10):
-    numbers[i] = int(input())
-    if minHere > numbers[i]:
-        minHere = numbers[i]
-        id = i
+    numbers = [0]*10
 
-numbers[id] = numbers[9]
-numbers[9] = minHere
+    for i in range(10):
+        numbers[i] = int(input())
 
-print(numbers)
+    print("Изначальный список: ", numbers)
+
+    num_id = numbers.index(min(numbers))
+
+    buf = numbers[num_id]
+    numbers[num_id] = numbers[9]
+    numbers[9] = buf
+
+    print("Преобразованный список: ", numbers)
