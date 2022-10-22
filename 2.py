@@ -10,12 +10,12 @@
 if __name__ == '__main__':
 
     numbers = [8, 0, 31, 0, 5, 22, 1, 0, -3]
-    all_multi = 1
+    multi = 1
     id2 = -1
 
     for i in range(len(numbers)):
         if i % 2 == 0:
-            all_multi = all_multi * numbers[i]
+            multi = multi * numbers[i]
 
         if numbers[i] == 0 and id2 == -1:
             id1 = i
@@ -23,7 +23,7 @@ if __name__ == '__main__':
         if numbers[i] == 0:
             id2 = i
 
-    print("Произведение: ", all_multi)
+    print("Произведение: ", multi)
     print("Сумма между '0': ", sum(numbers[id1:id2]))
 
     numbers.sort()

@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     print("Изначальный список: ", numbers)
 
-    num_id = numbers.index(min(numbers))
+    indx = numbers.index(min(numbers))
 
     buf = numbers[num_id]
     numbers[num_id] = numbers[9]
