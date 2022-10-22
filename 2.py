@@ -26,6 +26,5 @@ if __name__ == '__main__':
     print("Произведение: ", multi)
     print("Сумма между '0': ", sum(numbers[id1:id2]))
 
-    numbers.sort()
-    numbers.reverse()
+    numbers.sort(reverse = True)
     print(numbers)

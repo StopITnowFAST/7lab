@@ -15,8 +15,8 @@ if __name__ == '__main__':
 
     indx = numbers.index(min(numbers))
 
-    buf = numbers[num_id]
-    numbers[num_id] = numbers[9]
+    buf = numbers[indx]
+    numbers[indx] = numbers[9]
     numbers[9] = buf
 
     print("Преобразованный список: ", numbers)
