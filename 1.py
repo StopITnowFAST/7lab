@@ -8,15 +8,17 @@ if __name__ == '__main__':
 
     numbers = [0]*10
 
-    for i in range(10):
+    i = 0
+    while i < len(numbers):
         numbers[i] = int(input())
+        i = i + 1
 
     print("Изначальный список: ", numbers)
 
-    indx = numbers.index(min(numbers))
+    dx = numbers.index(min(numbers))
 
-    buf = numbers[indx]
-    numbers[indx] = numbers[9]
+    buf = numbers[dx]
+    numbers[dx] = numbers[9]
     numbers[9] = buf
 
     print("Преобразованный список: ", numbers)

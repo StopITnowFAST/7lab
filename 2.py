@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import math
+
 # В списке, состоящем из целых элементов, вычислить:
 # 1. произведение элементов списка с четными номерами;
 # 2. сумму элементов списка, расположенных между первым и последним нулевыми элементами.
@@ -10,21 +12,17 @@
 if __name__ == '__main__':
 
     numbers = [8, 0, 31, 0, 5, 22, 1, 0, -3]
-    multi = 1
     id2 = -1
 
-    for i in range(len(numbers)):
-        if i % 2 == 0:
-            multi = multi * numbers[i]
-
+    i = 0
+    while i < len(numbers):
         if numbers[i] == 0 and id2 == -1:
             id1 = i
-
         if numbers[i] == 0:
             id2 = i
+        i = i + 1
 
-    print("Произведение: ", multi)
+    print("Произведение: ", math.prod([x for x in numbers[::2]]))
     print("Сумма между '0': ", sum(numbers[id1:id2]))
-
     numbers.sort(reverse = True)
     print(numbers)
