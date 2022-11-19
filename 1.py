@@ -8,10 +8,8 @@ if __name__ == '__main__':
 
     numbers = [0]*10
 
-    i = 0
-    while i < len(numbers):
+    for i, item in enumerate(numbers):
         numbers[i] = int(input())
-        i = i + 1
 
     print("Изначальный список: ", numbers)
 
