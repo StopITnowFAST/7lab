@@ -6,17 +6,17 @@
 
 if __name__ == '__main__':
 
-    numbers = [0]*10
+    n = 10
+    numbers = [0] * n
 
-    for i, item in enumerate(numbers):
-        numbers[i] = int(input())
+    numbers = [int(input()) for i in numbers]
 
     print("Изначальный список: ", numbers)
 
     dx = numbers.index(min(numbers))
 
     buf = numbers[dx]
-    numbers[dx] = numbers[9]
-    numbers[9] = buf
+    numbers[dx] = numbers[n-1]
+    numbers[n-1] = buf
 
     print("Преобразованный список: ", numbers)
