@@ -6,17 +6,14 @@
 
 if __name__ == '__main__':
 
-    n = 10
-    numbers = [0] * n
-
-    numbers = [int(input()) for i in numbers]
+    numbers = [int(a) for a in input().split()]
 
     print("Изначальный список: ", numbers)
 
     dx = numbers.index(min(numbers))
 
     buf = numbers[dx]
-    numbers[dx] = numbers[n-1]
-    numbers[n-1] = buf
+    numbers[dx] = numbers[len(numbers)-2]
+    numbers[len(numbers)-2] = buf
 
     print("Преобразованный список: ", numbers)
