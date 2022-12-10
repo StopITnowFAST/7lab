@@ -11,16 +11,14 @@ import math
 
 if __name__ == '__main__':
 
-    numbers = [8, 0, 31, 0, 5, 22, 1, 0, -3]
-    id2 = -1
-
-    for i, item in enumerate(numbers):
-        if numbers[i] == 0 and id2 == -1:
-            id1 = i
-        if numbers[i] == 0:
-            id2 = i
+    numbers = [8, 0, 31, 0, 5, 22, 0, 1, -3]
 
     print("Произведение: ", math.prod([x for x in numbers[::2]]))
-    print("Сумма между '0': ", sum(numbers[id1:id2]))
+
+    id1 = len(numbers) - numbers.index(0)
+    numbers.reverse()
+    id2 = numbers.index(0)
+
+    print("Сумма между '0': ", sum(numbers[id2:id1]))
     numbers.sort(reverse = True)
     print(numbers)
